@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>Past Quizzes</th>
+        {% for quiz in past_quizzes %}
+        <td>{{quiz}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Live Quizzes</th>
+        {% for quiz in present_quizzes %}
+        <td>{{quiz}}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <th>Future Quizzes</th>
+        {% for quiz in future_quizzes %}
+        <td>{{quiz}}</td>
+        {% endfor %}
+    </tr>
+</table>

@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 
 class Quiz(models.Model):
     name = models.CharField(max_length=100)
-    scheduled_at = models.DateTimeField()
+    scheduled_at = models.DateField()
 
     def __str__(self):
-        return self.name+str(self.scheduled_at)
+        return self.name
 
 
 class Questions(models.Model):
