@@ -1,0 +1,22 @@
+{% load static %}
+<table>
+     {% for question in questions %}
+     <tr><td>{{question.ques}}</td></tr>
+     {% if question.image %}
+     <tr><td><img src="{% static question.image.url %}" height="100" width="200"></td></tr>
+     {% endif %}
+     {% if question.choice_a %}
+     <tr><td>{{question.choice_a}}</td></tr>
+     {% endif %}
+     {% if question.choice_b %}
+     <tr><td>{{question.choice_b}}</td></tr>
+     {% endif %}
+     {% if question.choice_c %}
+     <tr><td>{{question.choice_c}}</td></tr>
+     {% endif %}
+     {% if question.choice_d %}
+     <tr><td>{{question.choice_d}}</td></tr>
+     {% endif %}
+     {% endfor %}
+     
+</table>
