@@ -78,7 +78,7 @@ def check_answer(request, question_id):
                     answer = Answer.objects.create(user = request.user, question = question, resp=request.POST['answer'])
                 except:
                     return redirect('show_quiz', quiz_id=question.quiz.pk)
-                if answer.resp==question.ans:
+                if answer.resp==question.ans_in_capitals:
                     attempt.score+=20
                     print(attempt.score)
                     attempt.save()
