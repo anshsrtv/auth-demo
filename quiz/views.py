@@ -5,7 +5,12 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.timezone import now
 from datetime import timedelta
+from django.contrib.auth.decorators import login_required
 
+def index(request):
+    return redirect('list_quiz')
+
+@login_required(login_url='login')
 def list_quizzes(request):
     today = datetime.datetime.today()
     past_quizzes = Quiz.objects.filter(
@@ -27,6 +32,8 @@ def list_quizzes(request):
         }
     )
 
+
+@login_required(login_url='login')
 def show_quiz(request, quiz_id):
     try:
         quiz = Quiz.objects.get(pk = quiz_id)
@@ -51,6 +58,7 @@ def show_quiz(request, quiz_id):
                 minutes=attempt[0].created_at+timedelta(minutes=quiz.duration_in_minutes)-now()
                 return render(request, 'questions.html', {"minutes": round(minutes.total_seconds()/60,2), "questions": questions,"answers": answers, "attempt": attempt[0]})
 
+@login_required(login_url='login')
 def check_answer(request, question_id):
     try:
         question = Question.objects.filter(pk=question_id).first()
