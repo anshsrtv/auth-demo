@@ -1,4 +1,16 @@
-<table>
+<head>
+    <style>
+    .topright {
+         position: absolute;
+         top: 8px;
+         right: 16px;
+         font-size: 18px;
+    }
+    </style>
+</head>
+<div class="topright"><a href="/logout/">Logout</a></div>
+<div align = "center">
+    <table>
     <tr>
         <th>Past Quizzes</th>
         {% for quiz in past_quizzes %}
@@ -8,7 +20,7 @@
     <tr>
         <th>Live Quizzes</th>
         {% for quiz in present_quizzes %}
-        <td>{{quiz}}</td>
+        <td><a href="/quiz/{{quiz.pk}}/">{{quiz}}</a></td>
         {% endfor %}
     </tr>
     <tr>
@@ -17,4 +29,5 @@
         <td>{{quiz}}</td>
         {% endfor %}
     </tr>
-</table>
+    </table>
+</div>
