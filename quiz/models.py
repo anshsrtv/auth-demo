@@ -26,7 +26,7 @@ class Question(models.Model):
     choice_b = models.CharField(max_length=500, null=True, blank=True)
     choice_c = models.CharField(max_length=500, null=True, blank=True)
     choice_d = models.CharField(max_length=500, null=True, blank=True)
-    ans = models.TextField()
+    ans_in_capitals = models.TextField()
 
     def __str__(self):
         return str(self.quiz.pk)+"-"+str(self.pk)+"-"+self.ques
