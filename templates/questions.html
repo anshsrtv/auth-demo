@@ -16,7 +16,7 @@
 {% endif %}
 <table>
      {% for question in questions %}
-               <tr><td>{{question.ques}}</td></tr>
+               <tr><td colspan="2"><b>{{question.ques}}</b></td></tr>
                {% if question.image %}
                <tr><td><img src="{{ question.image.url }}" height="150" width="200"></td></tr>
                {% endif %}
