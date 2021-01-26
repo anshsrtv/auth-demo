@@ -1,4 +1,4 @@
-# Quiz_App
+# Auth Demo
 ## Setup and run
 1. Clone this repository `git clone https://github.com/anshsrtv/auth-demo.git`
 1. Enter the main directory `cd auth-demo/`
