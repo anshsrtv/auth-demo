@@ -10,7 +10,7 @@ from django.http import HttpResponse
 @login_required(login_url='/login/')
 def home(request):
     username = request.user.username
-    return HttpResponse("Hi {}, Welcome Home!".format(username))
+    return render(request, 'index.html', {'name': username})
 
 def signup(request):
    if request.method == 'POST':
