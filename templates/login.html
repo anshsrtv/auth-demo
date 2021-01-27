@@ -25,6 +25,11 @@
                         <h2 class="form-title">Log in</h2>
                         {% csrf_token %}
                         <center>
+                            {% if messages %}
+                                {% for message in messages %}
+                                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                                {% endfor %}
+                            {% endif %}
                         <table>
                         {% for field in form %}
                           <tr>
